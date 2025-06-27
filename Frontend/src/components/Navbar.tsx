@@ -69,7 +69,7 @@ export const Navbar: React.FC<NavbarProps> = ({ activeSection }) => {
                   className={`px-3 py-2 text-sm font-medium transition-colors duration-200 ${
                     activeSection === item.key
                       ? "text-indigo-600 dark:text-indigo-400"
-                      : `hover:text-indigo-600 dark:hover:text-indigo-400 ${
+                      : `  dark:text-indigo-100 hover:text-indigo-600 dark:hover:text-indigo-400 ${
                           isScrolled
                             ? "text-gray-900"
                             : `${
