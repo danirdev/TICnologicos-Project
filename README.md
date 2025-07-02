@@ -1,69 +1,66 @@
-# React + TypeScript + Vite
+# 🩺 ICT Health System
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+![Status](https://img.shields.io/badge/status-in%20development-yellow)
+![License](https://img.shields.io/badge/license-MIT-blue.svg)
+![Tech](https://img.shields.io/badge/stack-React%20%7C%20TypeScript%20%7C%20IoT-lightgrey)
+![Version](https://img.shields.io/badge/version-1.0.0-blue)
 
-Currently, two official plugins are available:
+> Transformando el sistema sanitario público mediante tecnologías accesibles, telemedicina e IoT.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+---
 
-## Expanding the ESLint configuration
+## 📌 Descripción
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+**ICT Health System** es una solución innovadora desarrollada como parte de un proyecto TIC orientado a mejorar la atención médica pública. La propuesta combina el análisis crítico del sistema de salud actual con la implementación de herramientas digitales como:
 
-```js
-export default tseslint.config([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+- Plataformas de telemedicina
+- Dispositivos inteligentes (IoT)
+- Diseño centrado en el usuario
+- Tecnologías web accesibles y multilingües
 
-      // Remove tseslint.configs.recommended and replace with this
-      ...tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      ...tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      ...tseslint.configs.stylisticTypeChecked,
+El proyecto está pensado para escalar, adaptarse y ser una herramienta real de transformación social.
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+---
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+## 🎯 Objetivos
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+- 💊 Mejorar la adherencia terapéutica de los pacientes.
+- 📉 Reducir las visitas hospitalarias innecesarias en al menos un 20%.
+- 📡 Facilitar el acceso a la atención médica remota.
+- 🤝 Promover una relación más cercana entre pacientes y profesionales.
+- 🧠 Impulsar el pensamiento crítico frente al uso de IA en salud.
 
-export default tseslint.config([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+---
+
+## 💻 Tecnologías utilizadas
+
+| Categoría     | Herramientas principales                         |
+|---------------|--------------------------------------------------|
+| Frontend      | `React`, `TypeScript`, `TailwindCSS`, `Framer Motion` |
+| Internacionalización | `i18next`, `React-i18next`                     |
+| Estilo y UI   | Animaciones, tarjetas circulares, carrusel modal |
+
+---
+
+## 🧠 Funcionalidades destacadas
+
+- 🔄 Carrusel interactivo con modal que **conserva el estado** entre aperturas.
+- 🌐 Diseño responsive y **multilenguaje** (ES/EN).
+- 🕹️ Menú flotante con control de accesibilidad (modo oscuro, traducción, etc.).
+- 🩺 Dispositivo inteligente (IoT): pastillero conectado con sistema de alertas.
+- 📈 Análisis visual del sistema y propuesta de solución con línea de tiempo y componentes dinámicos.
+
+
+## 🚀 Demo
+https://ticnologicos-portfolio.communnay.online/
+
+---
+
+## 📦 Instalación local
+
+```bash
+git clone https://github.com/tu-usuario/ict-health-system.git
+cd ict-health-system
+npm install
+npm run dev
+
