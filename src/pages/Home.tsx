@@ -17,6 +17,12 @@ import {
   RadioTower,
   Cpu,
   Palette,
+  Pill,
+  Wifi,
+  Shield,
+  Battery,
+  Cog,
+  Activity,
 } from "lucide-react";
 
 interface HomeProps {
@@ -27,47 +33,75 @@ export const Home: React.FC<HomeProps> = ({ onNavigate }) => {
   const { t } = useTranslation();
 
   const technologies = [
-    { name: "React", icon: Code, color: "text-blue-500" },
-    { name: "TypeScript", icon: Code, color: "text-blue-600" },
-    { name: "NextJS", icon: CodeXml, color: "text-red-500" },
+    { name: "ESP32", icon: Cpu, color: "text-blue-500" },
+    { name: "Arduino", icon: Cog, color: "text-green-600" },
+    { name: "IoT Sensors", icon: RadioTower, color: "text-teal-500" },
+    { name: "WiFi/Bluetooth", icon: Wifi, color: "text-purple-500" },
+    { name: "React Native", icon: Smartphone, color: "text-blue-600" },
     { name: "Node.js", icon: Database, color: "text-green-500" },
-    { name: "Django", icon: GitGraph, color: "text-yellow-500" },
     { name: "Python", icon: Brain, color: "text-yellow-600" },
-    { name: "Arduino", icon: Cpu, color: "text-green-600" },
-    { name: "IoT", icon: RadioTower, color: "text-teal-500" },
-    { name: "Mobile Apps", icon: Smartphone, color: "text-purple-500" },
-    { name: "Web Apps", icon: Globe, color: "text-orange-500" },
-    { name: "AI/ML", icon: Brain, color: "text-pink-500" },
+    { name: "Machine Learning", icon: Brain, color: "text-pink-500" },
+    { name: "Telemedicina", icon: Activity, color: "text-red-500" },
+    { name: "Batería Li-ion", icon: Battery, color: "text-orange-500" },
+    { name: "Seguridad", icon: Shield, color: "text-indigo-500" },
     { name: "UX/UI", icon: Palette, color: "text-rose-500" },
   ];
+
   const testimonials = [
     {
-      name: "María González",
-      company: "Tech Solutions Inc.",
+      name: "Dr. María González",
+      company: "Hospital Regional Jujuy",
       message:
-        "Exceptional work quality and professional service. They delivered exactly what we needed.",
+        "El pastillero inteligente representa una revolución en la adherencia terapéutica. Excelente propuesta tecnológica.",
       rating: 5,
     },
     {
-      name: "Carlos Rodriguez",
-      company: "Digital Innovations",
+      name: "Enfermera Carlos Rodriguez",
+      company: "Centro de Salud Digital",
       message:
-        "Outstanding team with great communication. Highly recommend their services.",
+        "La integración con telemedicina es impresionante. Facilitará enormemente el monitoreo de pacientes.",
       rating: 5,
     },
     {
-      name: "Ana Martínez",
-      company: "StartUp Labs",
+      name: "Paciente Ana Martínez",
+      company: "Usuario Beta",
       message:
-        "They transformed our vision into reality. Professional and efficient.",
+        "Finalmente una solución que me ayuda a recordar mis medicamentos. Muy fácil de usar.",
       rating: 5,
+    },
+  ];
+
+  const pillDispenserFeatures = [
+    {
+      icon: Pill,
+      title: "Dispensación Automatizada",
+      description: "Sistema rotatorio que dispensa medicamentos en horarios programados",
+      color: "text-blue-500",
+    },
+    {
+      icon: Wifi,
+      title: "Conectividad IoT",
+      description: "Conexión WiFi/Bluetooth para monitoreo remoto en tiempo real",
+      color: "text-purple-500",
+    },
+    {
+      icon: Activity,
+      title: "Telemedicina Integrada",
+      description: "Sincronización con plataformas médicas para seguimiento profesional",
+      color: "text-red-500",
+    },
+    {
+      icon: Shield,
+      title: "Seguridad de Datos",
+      description: "Protocolos seguros para información médica sensible",
+      color: "text-green-500",
     },
   ];
 
   return (
     <div className="pt-16">
       {/* Motto Section */}
-      <section className="py-20 bg-gradient-to-r from-gray-50 to-blue-50 dark:from-gray-900 dark:to-blue-900">
+      <section className="py-20 bg-gradient-to-r from-blue-50 to-indigo-50 dark:from-blue-900/20 dark:to-indigo-900/20">
         <div className="max-w-4xl px-4 mx-auto text-center">
           <motion.h2
             className="mb-8 text-4xl font-bold text-gray-900 md:text-5xl dark:text-white"
@@ -86,7 +120,7 @@ export const Home: React.FC<HomeProps> = ({ onNavigate }) => {
           <div className="grid gap-8 md:grid-cols-3">
             {/* Who We Are */}
             <motion.div
-              className="p-8 text-center  transition-shadow bg-white shadow-xl border-2 border-blue-300 dark:bg-gray-800 rounded-2xl hover:shadow-2xl"
+              className="p-8 text-center transition-shadow bg-white shadow-xl border-2 border-blue-300 dark:bg-gray-800 rounded-2xl hover:shadow-2xl"
               initial={{ opacity: 0, y: 50 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.1 }}
@@ -103,13 +137,13 @@ export const Home: React.FC<HomeProps> = ({ onNavigate }) => {
 
             {/* What We Do */}
             <motion.div
-              className="p-8 text-center transition-shadow bg-white  shadow-xl border-2 border-green-300 dark:bg-gray-800 rounded-2xl hover:shadow-xl"
+              className="p-8 text-center transition-shadow bg-white shadow-xl border-2 border-green-300 dark:bg-gray-800 rounded-2xl hover:shadow-xl"
               initial={{ opacity: 0, y: 50 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.2 }}
               whileHover={{ scale: 1.05 }}
             >
-              <Target className="w-16 h-16 mx-auto mb-6 text-purple-500" />
+              <Pill className="w-16 h-16 mx-auto mb-6 text-purple-500" />
               <h3 className="mb-4 text-2xl font-bold text-gray-900 dark:text-white">
                 {t("home.whatWeDo.title")}
               </h3>
@@ -138,8 +172,48 @@ export const Home: React.FC<HomeProps> = ({ onNavigate }) => {
         </div>
       </section>
 
-      {/* Methodology Section */}
+      {/* Pill Dispenser Features */}
       <section className="py-20 bg-gradient-to-r from-indigo-50 to-purple-50 dark:from-indigo-900/20 dark:to-purple-900/20">
+        <div className="max-w-6xl px-4 mx-auto">
+          <motion.div
+            className="mb-16 text-center"
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+          >
+            <h2 className="mb-4 text-4xl font-bold text-gray-900 dark:text-white">
+              Características del Pastillero Inteligente
+            </h2>
+            <p className="text-xl text-gray-600 dark:text-gray-300">
+              Tecnología avanzada para mejorar la adherencia terapéutica
+            </p>
+          </motion.div>
+
+          <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-4">
+            {pillDispenserFeatures.map((feature, index) => (
+              <motion.div
+                key={index}
+                className="p-6 text-center transition-all duration-300 bg-white shadow-lg border-2 border-gray-200 dark:bg-gray-800 rounded-xl hover:shadow-xl"
+                initial={{ opacity: 0, scale: 0.8 }}
+                whileInView={{ opacity: 1, scale: 1 }}
+                transition={{ duration: 0.5, delay: index * 0.1 }}
+                whileHover={{ scale: 1.05, y: -5 }}
+              >
+                <feature.icon className={`w-12 h-12 ${feature.color} mx-auto mb-3`} />
+                <h4 className="mb-2 font-semibold text-gray-900 dark:text-white">
+                  {feature.title}
+                </h4>
+                <p className="text-sm text-gray-600 dark:text-gray-300">
+                  {feature.description}
+                </p>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Methodology Section */}
+      <section className="py-20 bg-gradient-to-r from-gray-50 to-blue-50 dark:from-gray-900 dark:to-blue-900">
         <div className="max-w-6xl px-4 mx-auto">
           <motion.div
             className="mb-16 text-center"
@@ -162,7 +236,7 @@ export const Home: React.FC<HomeProps> = ({ onNavigate }) => {
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.2 }}
           >
-            {["Backlog", "In Progress", "Review", "Done"].map((column) => (
+            {["Investigación", "Desarrollo", "Pruebas", "Implementación"].map((column) => (
               <div
                 key={column}
                 className="p-4 bg-white rounded-lg shadow-lg dark:bg-gray-800"

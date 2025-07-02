@@ -6,6 +6,15 @@ import {
   AlertTriangle,
   Cpu,
   Users,
+  Cog,
+  Zap,
+  Shield,
+  Smartphone,
+  Wifi,
+  Battery,
+  Clock,
+  Heart,
+  Activity,
 } from "lucide-react";
 
 export interface ProjectSection {
@@ -32,15 +41,15 @@ export interface Project {
 export const projects: Project[] = [
   {
     id: "ticProject",
-    title: "ICT Health System",
-    subtitle: "Revolutionizing Healthcare with Telemedicine and IoT",
+    title: "Pastillero Inteligente Rotatorio",
+    subtitle: "Dispositivo IoT para adherencia terapéutica con telemedicina",
     translationKey: "projects.ticProject",
     sections: [
-      { id: "introduction", sectionIcon: FileText, color: "blue" },
-      { id: "justification", sectionIcon: Stethoscope, color: "green" },
+      { id: "introduction", sectionIcon: Pill, color: "blue" },
+      { id: "justification", sectionIcon: Heart, color: "red" },
       { id: "objective", sectionIcon: FileText, color: "purple" },
-      { id: "systemDescription", sectionIcon: Globe, color: "blue" },
-      { id: "telemedicine", sectionIcon: Globe, color: "cyan" },
+      { id: "systemDescription", sectionIcon: Cog, color: "blue" },
+      { id: "telemedicine", sectionIcon: Wifi, color: "cyan" },
       { id: "conceptualMapSystem", sectionIcon: FileText, color: "indigo" },
       {
         id: "conceptualMapTelemedicine",
@@ -93,5 +102,29 @@ export const projects: Project[] = [
         placeholder: "",
       },
     ],
+  },
+  {
+    id: "financeApp",
+    title: "Análisis de Costos",
+    subtitle: "Estudio económico del pastillero inteligente",
+    translationKey: "projects.financeApp",
+    sections: [],
+    images: [],
+  },
+  {
+    id: "eduPlatform",
+    title: "Plataforma Educativa",
+    subtitle: "Capacitación para usuarios del pastillero",
+    translationKey: "projects.eduPlatform",
+    sections: [],
+    images: [],
+  },
+  {
+    id: "energyDashboard",
+    title: "Monitoreo Energético",
+    subtitle: "Dashboard de consumo del dispositivo",
+    translationKey: "projects.energyDashboard",
+    sections: [],
+    images: [],
   },
 ];

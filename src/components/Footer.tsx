@@ -1,6 +1,7 @@
 import { useTranslation } from "react-i18next";
 import { useLocation } from "wouter";
 import { useState } from "react";
+
 export const Footer = () => {
   const { t } = useTranslation();
   const [, setLocation] = useLocation();
@@ -22,9 +23,17 @@ export const Footer = () => {
         <div className="grid gap-8 md:grid-cols-4">
           <div className="col-span-2">
             <h3 className="mb-4 text-2xl font-bold text-transparent bg-gradient-to-r from-indigo-400 to-purple-400 bg-clip-text">
-              TechFlow
+              TICnológicos
             </h3>
             <p className="mb-4 text-gray-400">{t("footer.description")}</p>
+            <div className="flex items-center space-x-2 text-sm text-gray-400">
+              <span>🏥</span>
+              <span>Pastillero Inteligente Rotatorio</span>
+            </div>
+            <div className="flex items-center space-x-2 text-sm text-gray-400 mt-2">
+              <span>🌐</span>
+              <span>Telemedicina & IoT</span>
+            </div>
           </div>
 
           <div>
@@ -33,7 +42,7 @@ export const Footer = () => {
               <li>
                 <button
                   onClick={() => handleNavigation("home")}
-                  className="hover:text-white"
+                  className="hover:text-white transition-colors"
                 >
                   {t("nav.home")}
                 </button>
@@ -41,7 +50,7 @@ export const Footer = () => {
               <li>
                 <button
                   onClick={() => handleNavigation("/projects")}
-                  className="hover:text-white"
+                  className="hover:text-white transition-colors"
                 >
                   {t("nav.projects")}
                 </button>
@@ -49,7 +58,7 @@ export const Footer = () => {
               <li>
                 <button
                   onClick={() => handleNavigation("/about")}
-                  className="hover:text-white"
+                  className="hover:text-white transition-colors"
                 >
                   {t("nav.about")}
                 </button>
@@ -57,7 +66,7 @@ export const Footer = () => {
               <li>
                 <button
                   onClick={() => handleNavigation("/contact")}
-                  className="hover:text-white"
+                  className="hover:text-white transition-colors"
                 >
                   {t("nav.contact")}
                 </button>
@@ -68,14 +77,28 @@ export const Footer = () => {
           <div>
             <h4 className="mb-4 font-semibold">{t("footer.contact.title")}</h4>
             <ul className="space-y-2 text-gray-400">
-              <li>ticnologicos.AADL@techflow.com</li>
-              <li>+54 (388) 311-8692</li>
-              <li>{t("footer.contact.location")}</li>
+              <li className="flex items-center space-x-2">
+                <span>📧</span>
+                <span>ticnologicos.AADL@gmail.com</span>
+              </li>
+              <li className="flex items-center space-x-2">
+                <span>📱</span>
+                <span>+54 (388) 311-8692</span>
+              </li>
+              <li className="flex items-center space-x-2">
+                <span>📍</span>
+                <span>{t("footer.contact.location")}</span>
+              </li>
+              <li className="flex items-center space-x-2">
+                <span>🎓</span>
+                <span>Estudiantes TICs</span>
+              </li>
             </ul>
           </div>
         </div>
         <div className="pt-8 mt-8 text-center text-gray-400 border-t border-gray-800">
-          <p>&copy; 2025 TICnológicos. {t("footer.rights")}</p>
+          <p>&copy; 2025 TICnológicos - Pastillero Inteligente. {t("footer.rights")}</p>
+          <p className="text-sm mt-2">Proyecto académico de Tecnologías de la Información y Comunicación</p>
         </div>
       </div>
     </footer>
