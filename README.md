@@ -1,7 +1,5 @@
 # 🩺 ICT Health System
 
-![Status](https://img.shields.io/badge/status-in%20development-yellow)
-![License](https://img.shields.io/badge/license-MIT-blue.svg)
 ![Tech](https://img.shields.io/badge/stack-React%20%7C%20TypeScript%20%7C%20IoT-lightgrey)
 ![Version](https://img.shields.io/badge/version-1.0.0-blue)
 
